@@ -1,17 +1,21 @@
 import { Server } from "socket.io";
 import Redis from 'ioredis';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const password = process.env.PASSWORD;
 
 const pub = new Redis({
     host: 'redis-3a4ea641-taruntailor7-57a2.l.aivencloud.com',
     port: 23949,
     username: 'default',
-    password: 'AVNS_dNHIR_NR3Eukk1gYED-',
+    password: password,
 });
 const sub = new Redis({
     host: 'redis-3a4ea641-taruntailor7-57a2.l.aivencloud.com',
     port: 23949,
     username: 'default',
-    password: 'AVNS_dNHIR_NR3Eukk1gYED-',
+    password: password,
 });
 
 class SocketService {
